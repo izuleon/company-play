@@ -1,5 +1,4 @@
 from typing import Any
-
 from django import forms
 
 from user.models import User, UserTypeChoices
@@ -34,4 +33,4 @@ class CustomUserCreationForm(forms.ModelForm):
             if company is None:
                 raise forms.ValidationError("Employee cant have empty company")
 
-        cleaned_data
+        return cleaned_data
