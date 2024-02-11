@@ -19,3 +19,5 @@
 
 ## Jawaban
 7. python manage.py set_staff_permission
+
+PS: aku code di windows, jadi requirement.txt nya ku sesuaikan, tapi buat keperluan di soal sudah solve semua issuenya
