@@ -16,3 +16,6 @@
 8. If employee created from django admin, add validation for the company must not be null
 9. Use OpenAPI schema based to showed all of the API endpoint
 10. Use SQLlite3 as DB that already migrated with the models (put it in the project as POC)
+
+## Jawaban
+7. python manage.py set_staff_permission
