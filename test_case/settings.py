@@ -39,8 +39,7 @@ DEFAULT_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "rest_framework",
-    'drf_spectacular',
-
+    "drf_spectacular",
 ]
 MODULE_APPS = [
     "user",
