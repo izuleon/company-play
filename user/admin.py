@@ -1,9 +1,10 @@
 # Register your models here.
 from typing import Any
+
 from django.contrib import admin
 from django.forms import ValidationError
-from user.forms import CustomUserCreationForm
 
+from user.forms import CustomUserCreationForm
 from user.models import User, UserTypeChoices
 
 
@@ -20,11 +21,18 @@ class UserAdmin(admin.ModelAdmin):
         "is_staff",
         "is_superuser",
     ]
-    
+
     form = CustomUserCreationForm
+
     def save_model(self, request, obj, form, change):
         super().save_model(request, obj, form, change)
         obj.set_password(form.cleaned_data.get("password1"))
         obj.save()
+
+    def get_readonly_fields(self, request, obj):
+        if request.user.is_superuser:
+            return []
+        return super().get_readonly_fields(request, obj)
+
 
 admin.site.register(User, UserAdmin)
